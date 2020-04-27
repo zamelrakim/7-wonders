@@ -1,6 +1,8 @@
 # 7-wonders
 
-[Space-Themed Gif](https://media.giphy.com/media/TZf4ZyXb0lXXi/source.gif)
+<p align="center">
+  <img src="https://media.giphy.com/media/TZf4ZyXb0lXXi/source.gif" width="80%"/>
+</p>
 
 - [Project Planning](#Project-Planning)
   - [Overview](#Overview)
