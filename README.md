@@ -1,4 +1,4 @@
-# 7-wonders
+# 7Wonders
 
 <p align="center">
   <img src="https://media.giphy.com/media/TZf4ZyXb0lXXi/source.gif" width="80%"/>
