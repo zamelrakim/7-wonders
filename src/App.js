@@ -19,6 +19,22 @@ class App extends Component {
     this.setContinent = this.setContinent.bind(this)
   }
 
+  componentDidMount() {
+    console.log('Component Did Mount');
+    if (!this.state.continent) {
+      // console.log('No Continent Set');
+      // this.setContinent('Africa')
+    }
+
+    console.log(this.state);
+    
+  }
+
+  componentDidUpdate() {
+    console.log('Component Did Update');
+    console.log(this.state);
+  }
+
   setContinent(newContinent) {
     const continentCountries = countries[newContinent]
 
