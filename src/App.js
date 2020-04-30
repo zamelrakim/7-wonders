@@ -57,29 +57,24 @@ class App extends Component {
   addAttraction(attraction, country) {
     console.log('Attraction Added!');
 
-    if (!this.state.plans) {
-      const savedAttraction = {}
-      savedAttraction.name = attraction.name
-      savedAttraction.image = attraction.images[0].sizes.medium.url
-      savedAttraction.snippet = attraction.snippet
+    const savedAttraction = {}
+    savedAttraction.name = attraction.name
+    savedAttraction.image = attraction.images[0].sizes.medium.url
+    savedAttraction.snippet = attraction.snippet
+    savedAttraction.country = country
+    savedAttraction.continent = this.state.continent
 
-      // Attractions (array)
-      const attractionsArr = []
-      attractionsArr[0] = savedAttraction
-
-      // Countries (object)
-      const countriesObj = {}
-      countriesObj[country] = attractionsArr
-
-      const plans = {}
-      plans[this.state.continent] = countriesObj
-
+    if (this.state.plans) {
+      let newPlanArray = this.state.plans.concat(savedAttraction)
       this.setState({
-        plans: plans
+        plans: newPlanArray
       })
-
-      console.log(this.state.plans);
-      
+    } else {
+      let plansArray = []
+      plansArray.push(savedAttraction)
+      this.setState({
+        plans: plansArray
+      })
     }
   }
 

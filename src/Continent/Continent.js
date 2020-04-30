@@ -7,8 +7,6 @@ function Continent(props) {
   const [selectedCountry, selectCountry] = useState(null)
   const [attractions, setAttractions] = useState(null)
 
-  console.log(selectedCountry);
-
   useEffect(() => {
     if (selectedCountry) {
       const apiCall = async () => {
@@ -17,10 +15,6 @@ function Continent(props) {
         
         setAttractions(data.data.results)
       }
-
-      console.log('Other Effect');
-
-      // Call API Function On Line Below
       apiCall()
     }
   }, [selectedCountry])
@@ -28,7 +22,6 @@ function Continent(props) {
   useEffect(() => {
     const selCountry = async () => {
       selectCountry((props.countries && props.countries[0]))
-      // props.setCountry(selectedCountry)
     }
     selCountry()
   }, [props])
@@ -41,7 +34,6 @@ function Continent(props) {
         }))}
       </ul>
       <div id='attractions'>
-        {/* Map Atrractions Here Using Attractions Component */}
         {(attractions && attractions.map(attraction => {
           return <Attraction key={attraction.id} attraction={attraction} country={selectedCountry} addAttraction={props.addAttraction} />
         }))}
