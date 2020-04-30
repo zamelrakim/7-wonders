@@ -28,6 +28,7 @@ function Continent(props) {
   useEffect(() => {
     const selCountry = async () => {
       selectCountry((props.countries && props.countries[0]))
+      // props.setCountry(selectedCountry)
     }
     selCountry()
   }, [props])
@@ -42,7 +43,7 @@ function Continent(props) {
       <div id='attractions'>
         {/* Map Atrractions Here Using Attractions Component */}
         {(attractions && attractions.map(attraction => {
-          return <Attraction key={attraction.id} attraction={attraction} addAttraction={props.addAttraction} />
+          return <Attraction key={attraction.id} attraction={attraction} country={selectedCountry} addAttraction={props.addAttraction} />
         }))}
       </div>
     </div>

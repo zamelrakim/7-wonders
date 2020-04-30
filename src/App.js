@@ -17,6 +17,7 @@ class App extends Component {
     }
 
     this.setContinent = this.setContinent.bind(this)
+    this.setCountry = this.setCountry.bind(this)
     this.addAttraction = this.addAttraction.bind(this)
   }
 
@@ -47,9 +48,39 @@ class App extends Component {
     })
   }
 
-  addAttraction(attraction) {
-    // console.log('Attraction Added!');
-    console.log(attraction);
+  setCountry(newCountry) {
+    this.setState({
+      country: newCountry
+    })
+  }
+
+  addAttraction(attraction, country) {
+    console.log('Attraction Added!');
+
+    if (!this.state.plans) {
+      const savedAttraction = {}
+      savedAttraction.name = attraction.name
+      savedAttraction.image = attraction.images[0].sizes.medium.url
+      savedAttraction.snippet = attraction.snippet
+
+      // Attractions (array)
+      const attractionsArr = []
+      attractionsArr[0] = savedAttraction
+
+      // Countries (object)
+      const countriesObj = {}
+      countriesObj[country] = attractionsArr
+
+      const plans = {}
+      plans[this.state.continent] = countriesObj
+
+      this.setState({
+        plans: plans
+      })
+
+      console.log(this.state.plans);
+      
+    }
   }
 
   render() {
@@ -66,7 +97,7 @@ class App extends Component {
           <World setContinent={this.setContinent}/>
           <Switch>
             <Route path='/:continent'>
-                <Continent addAttraction={this.addAttraction} countries={this.state.countriesList} />
+                <Continent addAttraction={this.addAttraction} setCountry={this.setCountry} countries={this.state.countriesList} />
             </Route>
           </Switch>
         </main>
