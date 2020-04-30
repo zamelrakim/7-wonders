@@ -42,7 +42,7 @@ function Continent(props) {
       <div id='attractions'>
         {/* Map Atrractions Here Using Attractions Component */}
         {(attractions && attractions.map(attraction => {
-          return <Attraction key={attraction.id} attraction={attraction} />
+          return <Attraction key={attraction.id} attraction={attraction} addAttraction={props.addAttraction} />
         }))}
       </div>
     </div>

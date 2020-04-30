@@ -17,6 +17,7 @@ class App extends Component {
     }
 
     this.setContinent = this.setContinent.bind(this)
+    this.addAttraction = this.addAttraction.bind(this)
   }
 
   componentDidMount() {
@@ -46,6 +47,11 @@ class App extends Component {
     })
   }
 
+  addAttraction(attraction) {
+    console.log('Attraction Added!');
+    
+  }
+
   render() {
 
     return (
@@ -60,7 +66,7 @@ class App extends Component {
           <World setContinent={this.setContinent}/>
           <Switch>
             <Route path='/:continent'>
-                <Continent countries={this.state.countriesList} />
+                <Continent addAttraction={this.addAttraction} countries={this.state.countriesList} />
             </Route>
           </Switch>
         </main>
