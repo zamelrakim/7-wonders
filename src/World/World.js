@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import { WorldMap } from 'grommet'
 
 export default function World(props) {
-  console.log(props)
   let history = useHistory()
 
   const continents = [
@@ -11,7 +10,6 @@ export default function World(props) {
       name: "Africa",
       color: "graph-1",
       onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
-      // onHover: (e) => { console.log(e)}
     },
     {
       name: "Asia",
