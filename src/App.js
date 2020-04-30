@@ -4,6 +4,7 @@ import { Switch, Route, Link, withRouter } from 'react-router-dom'
 import { Grommet } from 'grommet'
 import World from './World/World'
 import Continent from './Continent/Continent'
+import Gallery from './Gallery/Gallery'
 import countries from './data/countries.js'
 
 class App extends Component {
@@ -86,14 +87,18 @@ class App extends Component {
         <header className="">
             <Link to='/'><h1 id='sitename'>7Wonders</h1></Link>
             {this.state.continent && <h1>| {this.state.continent}</h1>}
-          <h2>Plans</h2>
+          <Link to='/plans'><h2>Plans</h2></Link>
         </header>
         <main>
           <World setContinent={this.setContinent}/>
-          <Switch>
+            <Switch>
+            <Route exact path='/plans'>
+                <Gallery plans={this.state.plans}/>
+            </Route>
             <Route path='/:continent'>
                 <Continent addAttraction={this.addAttraction} setCountry={this.setCountry} countries={this.state.countriesList} />
             </Route>
+           
           </Switch>
         </main>
       </Grommet>
