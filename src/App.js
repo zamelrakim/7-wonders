@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, withRouter } from 'react-router-dom'
 import { Grommet } from 'grommet'
 import World from './World/World'
 import Continent from './Continent/Continent'
@@ -21,9 +21,11 @@ class App extends Component {
 
   componentDidMount() {
     console.log('Component Did Mount');
-    if (!this.state.continent) {
+    if (!this.state.continent && !this.props.match.isExact) {
       // console.log('No Continent Set');
       // this.setContinent('Africa')
+      console.log(this.props);
+      
     }
 
     console.log(this.state);
@@ -57,7 +59,7 @@ class App extends Component {
         <main>
           <World setContinent={this.setContinent}/>
           <Switch>
-            <Route path='/:continent/'>
+            <Route path='/:continent'>
                 <Continent countries={this.state.countriesList} />
             </Route>
           </Switch>
@@ -68,4 +70,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

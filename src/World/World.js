@@ -9,32 +9,32 @@ export default function World(props) {
     {
       name: "Africa",
       color: "graph-1",
-      onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
+      onClick: (e) => { props.setContinent(e); history.push(`/${e}`) }
     },
     {
       name: "Asia",
       color: "graph-1",
-      onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
+      onClick: (e) => { props.setContinent(e); history.push(`/${e}`) }
     },
     {
       name: 'Australia',
       color: 'graph-1',
-      onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
+      onClick: (e) => { props.setContinent(e); history.push(`/${e}`) }
     },
     {
       name: 'Europe',
       color: 'graph-1',
-      onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
+      onClick: (e) => { props.setContinent(e); history.push(`/${e}`) }
     },
     {
       name: 'North America',
       color: 'graph-1',
-      onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
+      onClick: (e) => { props.setContinent(e); history.push(`/${e}`) }
     },
     {
       name: 'South America',
       color: 'graph-1',
-      onClick: (e) => { props.setContinent(e); history.push(`/${e}/`) }
+      onClick: (e) => { props.setContinent(e); history.push(`/${e}`) }
     }
   ]
   return (
