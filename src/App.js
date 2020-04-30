@@ -48,8 +48,8 @@ class App extends Component {
   }
 
   addAttraction(attraction) {
-    console.log('Attraction Added!');
-    
+    // console.log('Attraction Added!');
+    console.log(attraction);
   }
 
   render() {
