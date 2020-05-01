@@ -5,6 +5,7 @@ import { Grommet } from 'grommet'
 import World from './World/World'
 import Continent from './Continent/Continent'
 import Gallery from './Gallery/Gallery'
+import Header from './Header/Header'
 import countries from './data/countries.js'
 
 class App extends Component {
@@ -84,11 +85,7 @@ class App extends Component {
     return (
       <div className="App">
       <Grommet>
-        <header className="">
-            <Link to='/'><h1 id='sitename'>7Wonders</h1></Link>
-            {this.state.continent && <h1>| {this.state.continent}</h1>}
-          <Link to='/plans'><h2>Plans</h2></Link>
-        </header>
+          <Header continent={this.state.continent}/>
         <main>
           <World setContinent={this.setContinent}/>
             <Switch>
