@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Continent from './Continent'
+import { BrowserRouter } from 'react-router-dom'
 
 const listOfCountries = [
   'United States',
@@ -42,5 +43,9 @@ storiesOf('Continent', module)
     )
   })
   .add('Continent / Component', () => {
-    return <Continent addAttraction={() => {}} setCountry={() => {}} countries={listOfCountries} />
+    return (
+      <BrowserRouter>
+        <Continent addAttraction={() => {}} setCountry={() => {}} countries={listOfCountries} />
+      </BrowserRouter>
+    )
   })

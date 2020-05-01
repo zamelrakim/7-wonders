@@ -14,18 +14,22 @@ function Continent(props) {
         const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
         
         setAttractions(data.data.results)
+        console.log('Setting Attractions.')
       }
       apiCall()
     }
   }, [selectedCountry])
 
   useEffect(() => {
-    const selCountry = async () => {
-      selectCountry((props.countries && props.countries[0]))
-      // console.log(props.match.params.continent);
+    const setCountry = async () => {
+      if (!selectedCountry) selectCountry((props.countries && props.countries[0]))
     }
-    selCountry()
-  }, [props])
+    setCountry()
+  }, [props, selectedCountry])
+
+  useEffect(() => {
+    
+  }, [])
   
   return (
     <div id='continent'>

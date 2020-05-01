@@ -95,6 +95,8 @@ class App extends Component {
                   addAttraction={this.addAttraction}
                   setCountry={this.setCountry}
                   countries={this.state.countriesList}
+                  setContinent={this.setContinent}
+                  continent={this.state.continent}
                 />
             </Route>
           </Switch>

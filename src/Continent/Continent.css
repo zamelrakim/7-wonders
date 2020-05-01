@@ -28,6 +28,11 @@ img {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   margin: 0 auto;
   padding: 5px;
+}
+
+@media (min-width: 600px){
+  
 }

@@ -2,8 +2,6 @@ const countries = {
     "Asia": [
       "Japan",
       "Singapore",
-      "China",
-      "South Korea",
       "India",
       "Thailand",
       "Malaysia",
@@ -12,22 +10,18 @@ const countries = {
       "Philippines"
     ],
     "North America": [
-      "United States",
       "Mexico",
       "Canada",
       "Guatemala",
       "Cuba",
       "Haiti",
-      "Dominican Republic",
       "Barbados",
-      "The Bahamas",
       "Jamaica"
     ],
     "Europe": [
       "France",
       "Spain",
       "Italy",
-      "United Kingdom",
       "Turkey",
       "Germany",
       "Austria",
@@ -51,7 +45,6 @@ const countries = {
       "Nigeria",
       "Ethiopia",
       "Egypt",
-      "South Africa",
       "Kenya",
       "Uganda",
       "Ghana",
