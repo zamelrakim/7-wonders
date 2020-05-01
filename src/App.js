@@ -6,6 +6,7 @@ import World from './World/World'
 import Continent from './Continent/Continent'
 import Gallery from './Gallery/Gallery'
 import Header from './Header/Header'
+import Footer from './Footer/Footer'
 import countries from './data/countries.js'
 
 class App extends Component {
@@ -29,16 +30,20 @@ class App extends Component {
       // console.log('No Continent Set');
       // this.setContinent('Africa')
       console.log(this.props);
-      
     }
-
-    console.log(this.state);
-    
   }
 
   componentDidUpdate() {
     console.log('Component Did Update');
-    console.log(this.state);
+    // console.log(this.state);
+
+    let currentLocal = this.props.location.pathname
+
+    if (this.state.continent && (currentLocal === '/' || currentLocal === '/plans')) {
+      this.setState({
+        continent: null
+      })
+    }
   }
 
   setContinent(newContinent) {
@@ -85,7 +90,7 @@ class App extends Component {
     return (
       <div className="App">
       <Grommet>
-          <Header continent={this.state.continent}/>
+        <Header continent={this.state.continent}/>
         <main>
           <World setContinent={this.setContinent}/>
             <Switch>
@@ -95,9 +100,9 @@ class App extends Component {
             <Route path='/:continent'>
                 <Continent addAttraction={this.addAttraction} setCountry={this.setCountry} countries={this.state.countriesList} />
             </Route>
-           
           </Switch>
         </main>
+        <Footer />
       </Grommet>
     </div>
     )
