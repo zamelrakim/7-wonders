@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import Attraction from './Attraction'
 
 const testData = [
   {
@@ -40,4 +41,7 @@ storiesOf('Attraction', module)
         })}
       </div>
     )
+  })
+  .add('Attraction / Component', () => {
+    return <Attraction attraction={} country={} addAttraction={() => {}} />
   })

@@ -2,6 +2,9 @@ footer {
   text-align: center;
   width: 100%;
   background-color: rgb(28, 119, 47);
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
 }
 
 footer a {

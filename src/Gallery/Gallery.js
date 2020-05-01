@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Gallery(props) {
   return (
-    <div>
+    <div id='plans'>
       {props.plans && props.plans.map((plan, idx) => {
         return (
           <div key={plan.name + idx}>

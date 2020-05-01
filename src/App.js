@@ -24,19 +24,14 @@ class App extends Component {
     this.addAttraction = this.addAttraction.bind(this)
   }
 
-  componentDidMount() {
-    console.log('Component Did Mount');
-    if (!this.state.continent && !this.props.match.isExact) {
-      // console.log('No Continent Set');
-      // this.setContinent('Africa')
-      console.log(this.props);
-    }
-  }
+  // componentDidMount() {
+  //   console.log('Component Did Mount');
+  //   if (!this.state.continent && !this.props.match.isExact) {
+  //     console.log(this.props);
+  //   }
+  // }
 
   componentDidUpdate() {
-    console.log('Component Did Update');
-    // console.log(this.state);
-
     let currentLocal = this.props.location.pathname
 
     if (this.state.continent && (currentLocal === '/' || currentLocal === '/plans')) {
@@ -62,8 +57,6 @@ class App extends Component {
   }
 
   addAttraction(attraction, country) {
-    console.log('Attraction Added!');
-
     const savedAttraction = {}
     savedAttraction.name = attraction.name
     savedAttraction.image = attraction.images[0].sizes.medium.url
@@ -98,7 +91,11 @@ class App extends Component {
                 <Gallery plans={this.state.plans}/>
             </Route>
             <Route path='/:continent'>
-                <Continent addAttraction={this.addAttraction} setCountry={this.setCountry} countries={this.state.countriesList} />
+                <Continent
+                  addAttraction={this.addAttraction}
+                  setCountry={this.setCountry}
+                  countries={this.state.countriesList}
+                />
             </Route>
           </Switch>
         </main>
