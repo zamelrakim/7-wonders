@@ -1,0 +1,33 @@
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+li {
+  font-weight: bold;
+}
+
+hr {
+  height: 1px;
+  background-color: black;
+  border: none;
+}
+
+img {
+  max-width: 100%
+}
+
+#attractions {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 5px;
+}

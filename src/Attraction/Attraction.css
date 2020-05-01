@@ -1,0 +1,15 @@
+button {
+  background-color: black;
+  color: white;
+  display: block;
+  height: 24px;
+  margin: auto 25px;
+  border: none;
+}
+
+.attraction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}

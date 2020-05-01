@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import Attraction from '../Attraction/Attraction'
+import './Continent.css'
 
 function Continent(props) {
   const [selectedCountry, selectCountry] = useState(null)
@@ -15,7 +16,7 @@ function Continent(props) {
         
         setAttractions(data.data.results)
       }
-      // apiCall()
+      apiCall()
     }
   }, [selectedCountry])
 
@@ -33,6 +34,7 @@ function Continent(props) {
           return <li key={country} onClick={() => { selectCountry(country) }}>{country}</li>
         }))}
       </ul>
+      <hr />
       <div id='attractions'>
         {(attractions && attractions.map(attraction => {
           return <Attraction key={attraction.id} attraction={attraction} country={selectedCountry} addAttraction={props.addAttraction} />

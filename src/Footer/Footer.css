@@ -1,0 +1,21 @@
+footer {
+  text-align: center;
+  width: 100%;
+  background-color: rgb(28, 119, 47);
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+#github-name {
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+footer img {
+  padding-top: 5px;
+}
