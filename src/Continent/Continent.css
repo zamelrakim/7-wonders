@@ -19,7 +19,7 @@ hr {
 }
 
 img {
-  max-width: 100%
+  max-width: 100%;
 }
 
 #attractions {
@@ -31,8 +31,4 @@ img {
   align-items: center;
   margin: 0 auto;
   padding: 5px;
-}
-
-@media (min-width: 600px){
-  
 }

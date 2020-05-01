@@ -97,7 +97,7 @@ storiesOf('Gallery', module)
       <div style={containerStyle}>
         {testData.map(attraction => {
           return (
-            <div >
+            <div>
               <img src={attraction.image.url} style={imageStyle} alt='attractionImage' />
               <h3>{attraction.name}</h3>
               <p>{attraction.snippet}</p>

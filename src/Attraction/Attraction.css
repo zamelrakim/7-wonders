@@ -10,6 +10,7 @@ button {
 .attraction {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: center;
   margin-bottom: 20px;
 }

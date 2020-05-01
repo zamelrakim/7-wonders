@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { Grommet } from 'grommet'
 import World from './World/World'
 import Continent from './Continent/Continent'
@@ -23,13 +23,6 @@ class App extends Component {
     this.setCountry = this.setCountry.bind(this)
     this.addAttraction = this.addAttraction.bind(this)
   }
-
-  // componentDidMount() {
-  //   console.log('Component Did Mount');
-  //   if (!this.state.continent && !this.props.match.isExact) {
-  //     console.log(this.props);
-  //   }
-  // }
 
   componentDidUpdate() {
     let currentLocal = this.props.location.pathname

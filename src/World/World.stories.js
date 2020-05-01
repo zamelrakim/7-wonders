@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Grommet, WorldMap } from 'grommet'
-import World from './World'
 
 const continents = [
   {
@@ -84,8 +83,3 @@ storiesOf('World', module)
       </Grommet>
     )
   })
-  // .add('World / Component', () => {
-  //   return (
-  //     <World />
-  //   )
-  // })

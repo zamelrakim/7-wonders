@@ -38,6 +38,8 @@ export default function World(props) {
     }
   ]
   return (
-   <WorldMap continents={continents} />
+    <div id='world'>
+      <WorldMap continents={continents} />
+    </div>
   )
 }

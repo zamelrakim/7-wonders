@@ -5,8 +5,7 @@ import './Header.css'
 export default function Header(props) {
   return (
     <header>
-      <Link to='/' className='header-links'><h1>7Wonders</h1></Link>
-      {props.continent && <h1>| {props.continent}</h1>}
+      <h1><Link to='/' className='header-links'>{"7Wonders" + (props.continent ? ` | ${props.continent}` : '')} </Link></h1>
       <Link to='/plans' className='header-links'><h2>Plans</h2></Link>
       
     </header>
