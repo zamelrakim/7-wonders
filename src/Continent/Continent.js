@@ -15,7 +15,7 @@ function Continent(props) {
         
         setAttractions(data.data.results)
       }
-      apiCall()
+      // apiCall()
     }
   }, [selectedCountry])
 
