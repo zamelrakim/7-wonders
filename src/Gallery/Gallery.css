@@ -1,7 +1,3 @@
-/* #plans {
-  margin-top: 5px;
-} */
-
 #plans {
   display: flex;
   flex-direction: row;
@@ -12,10 +8,33 @@
   padding: 5px;
 }
 
-#plans .attraction {
+.plan {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: center;
-  margin-bottom: 20px;
   background-color: white;
+  margin-bottom: 20px;
+}
+
+#plans button {
+  background-color: red;
+  color: white;
+  display: block;
+  height: 24px;
+  margin: 10px 25px;
+  border: none;
+  align-content: space-between
+}
+
+@media (min-width: 768px) {
+  .plan {
+    width: 30%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .plan {
+    width: 48%;
+  }
 }

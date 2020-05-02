@@ -22,6 +22,7 @@ class App extends Component {
     this.setContinent = this.setContinent.bind(this)
     this.setCountry = this.setCountry.bind(this)
     this.addAttraction = this.addAttraction.bind(this)
+    this.removeAttraction = this.removeAttraction.bind(this)
   }
 
   componentDidUpdate() {
@@ -58,10 +59,13 @@ class App extends Component {
     savedAttraction.continent = this.state.continent
 
     if (this.state.plans) {
-      let newPlanArray = this.state.plans.concat(savedAttraction)
-      this.setState({
-        plans: newPlanArray
-      })
+      let objectIncluded = this.state.plans.includes(savedAttraction)
+      if (!objectIncluded) {
+        let newPlanArray = this.state.plans.concat(savedAttraction)
+        this.setState({
+          plans: newPlanArray
+        })
+      }
     } else {
       let plansArray = []
       plansArray.push(savedAttraction)
@@ -69,6 +73,16 @@ class App extends Component {
         plans: plansArray
       })
     }
+  }
+
+  removeAttraction(plan) {
+    let prevPlans = this.state.plans
+    let idx = prevPlans.indexOf(plan)
+    prevPlans.splice(idx, 1)
+    
+    this.setState({
+      plans: prevPlans
+    })
   }
 
   render() {
@@ -81,7 +95,7 @@ class App extends Component {
           <World setContinent={this.setContinent}/>
             <Switch>
             <Route exact path='/plans'>
-                <Gallery plans={this.state.plans}/>
+                <Gallery plans={this.state.plans} removeAttraction={this.removeAttraction}/>
             </Route>
             <Route path='/:continent'>
                 <Continent

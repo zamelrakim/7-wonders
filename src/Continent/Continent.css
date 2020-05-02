@@ -10,6 +10,7 @@ ul {
 
 li {
   font-weight: bold;
+  margin: auto 5px;
 }
 
 hr {
