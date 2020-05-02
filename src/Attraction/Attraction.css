@@ -3,8 +3,9 @@ button {
   color: white;
   display: block;
   height: 24px;
-  margin: auto 25px;
+  margin: 10px 25px;
   border: none;
+  align-content: space-between
 }
 
 .attraction {
@@ -13,4 +14,17 @@ button {
   flex-wrap: nowrap;
   justify-content: center;
   margin-bottom: 20px;
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  .attraction {
+    width: 30%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .attraction {
+    width: 48%;
+  }
 }

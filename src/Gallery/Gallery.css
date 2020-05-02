@@ -1,3 +1,21 @@
-#plans {
+/* #plans {
   margin-top: 5px;
+} */
+
+#plans {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+#plans .attraction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: white;
 }

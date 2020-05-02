@@ -65,14 +65,14 @@ storiesOf('World', module)
   .add('World / Theme', () => {
     return (
       <Grommet theme={theme}>
-        <WorldMap />
+        <WorldMap alignSelf='center' />
       </Grommet>
     )
   })
   .add('World / Continents', () => {
    return (
       <Grommet theme={theme}>
-        <WorldMap continents={continents} />
+        <WorldMap alignSelf='center' continents={continents} />
       </Grommet>
     )
   })

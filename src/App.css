@@ -7,7 +7,7 @@
   flex-direction: column;
   background-color: #0f5298;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   position: relative;
   min-height: 100vh;
 }
@@ -23,6 +23,6 @@ g {
 
 @media (min-width: 600px){
   body {
-    width: 100%;
+    min-width: 121px;
   }
 }
