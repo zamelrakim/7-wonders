@@ -144,12 +144,13 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the home link as the site's name._               |
-|  Attraction  | functional |   n   |   n   | _Shows Top Attractions for selected country_        |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the postcards using flexbox._      |
-| Postcard | functional |   n   |   y   | _The cards will be customized cards for each continent with the choosen attractions_  |
-|    Country    | functional |   n   |   n   | _Displays a list of countries_ |
+|    Header    | functional |   n   |   y   | _The header will contain the home link as the site's name._               |
+|  Attraction  | functional |   n   |   y   | _Shows Top Attractions for selected country_        |
+|   Gallery    |   class    |   n   |   y  | _The gallery will render the postcards using flexbox._      |
+| World | functional |   n   |   y   | _The cards will be customized cards for each continent with the choosen attractions_  |
+|    Continent    | functional |   y   |   y   | _Displays a list of countries_ |
 |    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    App    | Class |   y  |   n   | Used react class for App component |
 
 <br>
 
@@ -157,14 +158,14 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Basic React Setup    |    H     |     3 hrs      |          |      |
-| Retrieve Data From API |    H     |     5 hrs      |         |        |
-| World Component |    H     |     6 hrs      |         |        |
-| Gallery & Postcard Components |    H     |     5 hrs      |         |        |
-| Country Component |    H     |     5 hrs      |         |        |
-| Attraction Component |    H     |     4 hrs      |         |        |
-| CSS Styling / Flexbox |    H     |     6 hrs      |         |        |
-| TOTAL               |          |     40 hrs      |          |          |
+| Basic React Setup    |    H     |     3 hrs      |      3hrs    |    3hrs  |
+| Retrieve Data From API |    H     |     5 hrs      |      5hrs   |    5hrs    |
+| World Component |    H     |     6 hrs      |   9hrs      |    9hrs    |
+| Gallery Components |    H     |     5 hrs      |     5hrs    |    5hrs    |
+| Continent Component |    H     |     5 hrs      |     9hrs    |    9hrs    |
+| Attraction Component |    H     |     4 hrs      |     8hrs    |     8hrs   |
+| CSS Styling / Flexbox |    H     |     6 hrs      |     8hrs    |     8hrs   |
+| TOTAL               |          |     40 hrs      |      47hrs    |     47hrs     |
 
 <br>
 
@@ -188,7 +189,18 @@ src
 
 ### Code Showcase
 
-> No code to showcase at the moment.
+```
+useEffect(() => {
+    if (selectedCountry) {
+      const apiCall = async () => {
+        const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
+
+        setAttractions(data.data.results)
+      }
+      apiCall()
+    }
+  }, [selectedCountry])
+```
 
 ### Code Issues & Resolutions
 
