@@ -26,12 +26,15 @@ function Continent(props) {
     setCountry()
   }, [props.countries, selectedCountry])
 
+  let { setContinent } = props
+  let continent = props.match.params.continent
+
   useEffect(() => {
     const mountFunction = async () => {
-      await props.setContinent(props.match.params.continent)
+      await setContinent(continent)
     }
     mountFunction()
-  }, [])
+  }, [setContinent, continent])
 
   return (
     <div id='continent'>

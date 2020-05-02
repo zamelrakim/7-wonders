@@ -26,9 +26,9 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    let currentLocal = this.props.location.pathname
+    let currentRoute = this.props.location.pathname
 
-    if (this.state.continent && (currentLocal === '/' || currentLocal === '/plans')) {
+    if (this.state.continent && (currentRoute === '/' || currentRoute === '/plans')) {
       this.setState({
         continent: null
       })
@@ -86,7 +86,6 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div className="App">
       <Grommet>
