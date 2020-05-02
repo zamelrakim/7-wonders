@@ -24,7 +24,7 @@ function Continent(props) {
       if (!selectedCountry) selectCountry((props.countries && props.countries[0]))
     }
     setCountry()
-  }, [props, selectedCountry])
+  }, [props.countries, selectedCountry])
 
   useEffect(() => {
     const mountFunction = async () => {
