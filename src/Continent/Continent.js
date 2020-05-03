@@ -21,11 +21,11 @@ function Continent(props) {
 
   useEffect(() => {
     const setCountry = async () => {
-      selectCountry((props.countries && props.countries[0]))
+      if (props.countries && selectedCountry !== props.countries[0]) {
+        await selectCountry((props.countries && props.countries[0]))
+      }
     }
     setCountry()
-    console.log('Country Changed', selectedCountry);
-    
   }, [props.countries])
 
   let { setContinent } = props
