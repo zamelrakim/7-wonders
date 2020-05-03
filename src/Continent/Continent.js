@@ -21,10 +21,12 @@ function Continent(props) {
 
   useEffect(() => {
     const setCountry = async () => {
-      if (!selectedCountry) selectCountry((props.countries && props.countries[0]))
+      selectCountry((props.countries && props.countries[0]))
     }
     setCountry()
-  }, [props.countries, selectedCountry])
+    console.log('Country Changed', selectedCountry);
+    
+  }, [props.countries])
 
   let { setContinent } = props
   let continent = props.match.params.continent
@@ -34,7 +36,7 @@ function Continent(props) {
       await setContinent(continent)
     }
     mountFunction()
-  }, [setContinent, continent])
+  }, [])
 
   return (
     <div id='continent'>
