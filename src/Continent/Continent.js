@@ -21,8 +21,9 @@ function Continent(props) {
 
   useEffect(() => {
     const setCountry = () => {
-      if (props.countries && selectedCountry !== props.countries[0]) {
-        selectCountry(props.countries[0])
+      if (props.countries) {
+        let includesCountry = props.countries.includes(selectedCountry)
+        if (!includesCountry) selectCountry(props.countries[0])
       }
     }
     setCountry()
