@@ -119,22 +119,22 @@ src
 |__ data
     |__ countries.json
 |__ World/
-    |__ World.jsx
+    |__ World.js
     |__ World.css
-|__ Postcard/
-    |__ Postcard.jsx
-    |__ Postcard.css
+|__ Continent/
+    |__ Continent.js
+    |__ Continent.css
 |__ Attraction/
-    |__ Attraction.jsx
+    |__ Attraction.js
     |__ Attraction.css
 |__ Footer/
-    |__ Footer.jsx
+    |__ Footer.js
     |__ Footer.css
-|__ Country/
-    |__ Country.jsx
-    |__ Country.css
+|__ Header/
+    |__ Header.js
+    |__ Header.css
 |__ Gallery/
-    |__ Gallery.jsx
+    |__ Gallery.js
     |__ Gallery.css
 ```
 
