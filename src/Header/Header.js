@@ -7,7 +7,6 @@ export default function Header(props) {
     <header>
       <p><Link to='/' className='header-links'>{"7Wonders" + (props.continent ? ` | ${props.continent}` : '')} </Link></p>
       <Link to='/plans' className='header-links'><p>Plans</p></Link>
-      
     </header>
   )
 }
