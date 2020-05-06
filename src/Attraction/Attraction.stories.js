@@ -20,5 +20,5 @@ const country = 'Malaysia'
 
 storiesOf('Attraction', module)
   .add('Attraction / Component', () => {
-    return <Attraction attraction={testData} country={country} addAttraction={() => {}} />
+    return <Attraction attraction={testData} country={country} />
   })

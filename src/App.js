@@ -15,12 +15,10 @@ class App extends Component {
     this.state = {
       continent: null,
       countriesList: null,
-      country: null,
       plans: null
     }
 
     this.setContinent = this.setContinent.bind(this)
-    this.setCountry = this.setCountry.bind(this)
     this.addAttraction = this.addAttraction.bind(this)
     this.removeAttraction = this.removeAttraction.bind(this)
   }
@@ -44,13 +42,7 @@ class App extends Component {
     })
   }
 
-  setCountry(newCountry) {
-    this.setState({
-      country: newCountry
-    })
-  }
-
-  addAttraction(attraction, country) {
+ addAttraction(attraction, country) {
     const savedAttraction = {}
     savedAttraction.name = attraction.name
     savedAttraction.image = attraction.images[0].sizes.medium.url
@@ -91,7 +83,7 @@ class App extends Component {
       <Grommet>
         <Header continent={this.state.continent}/>
         <main>
-          <World setContinent={this.setContinent}/>
+          <World />
             <Switch>
             <Route exact path='/plans'>
                 <Gallery plans={this.state.plans} removeAttraction={this.removeAttraction}/>
@@ -99,7 +91,6 @@ class App extends Component {
             <Route path='/:continent'>
                 <Continent
                   addAttraction={this.addAttraction}
-                  setCountry={this.setCountry}
                   countries={this.state.countriesList}
                   setContinent={this.setContinent}
                   continent={this.state.continent}

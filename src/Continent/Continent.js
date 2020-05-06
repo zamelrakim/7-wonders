@@ -8,16 +8,15 @@ function Continent(props) {
   const [selectedCountry, selectCountry] = useState(null)
   const [attractions, setAttractions] = useState(null)
 
-  useEffect(() => {
-    if (selectedCountry) {
-      const apiCall = async () => {
-        const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
+  let { setContinent } = props
+  let paramsContinent = props.match.params.continent
 
-        setAttractions(data.data.results)
-      }
-      apiCall()
+  useEffect(() => {
+    const mountComponent = async () => {
+      await setContinent(paramsContinent)
     }
-  }, [selectedCountry])
+    mountComponent()
+  }, [paramsContinent, setContinent])
 
   useEffect(() => {
     const setCountry = () => {
@@ -29,15 +28,16 @@ function Continent(props) {
     setCountry()
   }, [props.countries, selectedCountry])
 
-  let { setContinent } = props
-  let continent = props.match.params.continent
-
   useEffect(() => {
-    const mountFunction = async () => {
-      await setContinent(continent)
+    if (selectedCountry) {
+      const apiCall = async () => {
+        const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
+
+        setAttractions(data.data.results)
+      }
+      apiCall()
     }
-    mountFunction()
-  }, [continent, setContinent])
+  }, [selectedCountry])
 
   return (
     <div id='continent'>
