@@ -6,17 +6,18 @@ import './Continent.css'
 
 function Continent(props) {
   const [selectedCountry, selectCountry] = useState(null)
-  const [attractions, setAttractions] = useState(null)
+  const [attractions, setAttractions] = useState([])
 
   let { setContinent } = props
-  let paramsContinent = props.match.params.continent
+  let continent = props.match.params.continent
 
   useEffect(() => {
-    const mountComponent = async () => {
-      await setContinent(paramsContinent)
+    const mountFunction = async () => {
+      await setContinent(continent)
     }
-    mountComponent()
-  }, [paramsContinent, setContinent])
+    mountFunction()
+  }, [continent, setContinent])
+
 
   useEffect(() => {
     const setCountry = () => {
@@ -28,6 +29,7 @@ function Continent(props) {
     setCountry()
   }, [props.countries, selectedCountry])
 
+  // V1 (TRIPOSO)
   useEffect(() => {
     if (selectedCountry) {
       const apiCall = async () => {
@@ -38,6 +40,29 @@ function Continent(props) {
       apiCall()
     }
   }, [selectedCountry])
+
+        // Gather Coordinates
+        const coordinatesArray = []
+        data.data.results.forEach(attraction => {
+          const attractionCoordinates = attraction.coordinates
+          let { latitude, longitude } = attractionCoordinates
+          let location = []
+          location[0] = latitude
+          location[1] = longitude
+          let locationCoordinates = {
+            location: location
+          }
+          coordinatesArray.push(locationCoordinates)
+        })
+        console.log(coordinatesArray);
+        props.setLocations(coordinatesArray)
+        
+      }
+      apiCall()
+    }
+  }, [selectedCountry]) 
+  */
+
 
   return (
     <div id='continent'>

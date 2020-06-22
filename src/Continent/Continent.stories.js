@@ -15,7 +15,7 @@ storiesOf('Continent', module)
   .add('Continent / Component', () => {
     return (
       <BrowserRouter>
-        <Continent addAttraction={() => {}} setCountry={() => {}} countries={listOfCountries} />
+        <Continent countries={listOfCountries} />
       </BrowserRouter>
     )
   })
