@@ -2,7 +2,6 @@ import React from 'react'
 import './Gallery.css'
 
 export default function Gallery(props) {
-
   return (
     <div id='plans'>
       {props.plans && props.plans.map((plan, idx) => {

@@ -39,7 +39,7 @@ export default function World(props) {
   ]
   return (
     <div id='world'>
-      <WorldMap alignSelf='center' fill='false' continents={continents} />
+      <WorldMap alignSelf='center' fill='false' continents={continents} places={props.locations}/>
     </div>
   )
 }
