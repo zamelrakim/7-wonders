@@ -30,38 +30,37 @@ function Continent(props) {
   }, [props.countries, selectedCountry])
 
   // V1 (TRIPOSO)
-  useEffect(() => {
-    if (selectedCountry) {
-      const apiCall = async () => {
-        const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
+  // useEffect(() => {
+  //   if (selectedCountry) {
+  //     const apiCall = async () => {
+  //       const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
 
-        setAttractions(data.data.results)
-      }
-      apiCall()
-    }
-  }, [selectedCountry])
+  //       setAttractions(data.data.results)
+  //     }
+  //     apiCall()
+  //   }
+  // }, [selectedCountry])
 
-        // Gather Coordinates
-        const coordinatesArray = []
-        data.data.results.forEach(attraction => {
-          const attractionCoordinates = attraction.coordinates
-          let { latitude, longitude } = attractionCoordinates
-          let location = []
-          location[0] = latitude
-          location[1] = longitude
-          let locationCoordinates = {
-            location: location
-          }
-          coordinatesArray.push(locationCoordinates)
-        })
-        console.log(coordinatesArray);
-        props.setLocations(coordinatesArray)
+  //       // Gather Coordinates
+  //       const coordinatesArray = []
+  //       data.data.results.forEach(attraction => {
+  //         const attractionCoordinates = attraction.coordinates
+  //         let { latitude, longitude } = attractionCoordinates
+  //         let location = []
+  //         location[0] = latitude
+  //         location[1] = longitude
+  //         let locationCoordinates = {
+  //           location: location
+  //         }
+  //         coordinatesArray.push(locationCoordinates)
+  //       })
+  //       console.log(coordinatesArray);
+  //       props.setLocations(coordinatesArray)
         
-      }
-      apiCall()
-    }
-  }, [selectedCountry]) 
-  */
+  //     }
+  //     apiCall()
+  //   }
+  // }, [selectedCountry]) 
 
 
   return (

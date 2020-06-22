@@ -22,7 +22,7 @@ class App extends Component {
     }
 
     this.setContinent = this.setContinent.bind(this)
-    this.setCountry = this.setCountry.bind(this)
+    // this.setCountry = this.setCountry.bind(this)
     // this.addAttraction = this.addAttraction.bind(this)
     this.addAltAttraction = this.addAltAttraction.bind(this)
     this.removeAttraction = this.removeAttraction.bind(this)

@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { WorldMap } from 'grommet'
 
-export default function World() {
+export default function World(props) {
   let history = useHistory()
 
   const continents = [
