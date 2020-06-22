@@ -48,13 +48,7 @@ class App extends Component {
     })
   }
 
-  setCountry(newCountry) {
-    this.setState({
-      country: newCountry
-    })
-  }
-
-  addAttraction(attraction, country) {
+ addAttraction(attraction, country) {
     const savedAttraction = {}
     savedAttraction.name = attraction.name
     savedAttraction.image = attraction.images[0].sizes.medium.url
@@ -127,6 +121,7 @@ class App extends Component {
         <Header continent={this.state.continent}/>
         <main>
             <World setContinent={this.setContinent} locations={this.state.locations}/>
+
             <Switch>
             <Route exact path='/plans'>
                 <Gallery plans={this.state.plans} removeAttraction={this.removeAttraction}/>
@@ -135,6 +130,7 @@ class App extends Component {
                 <AltContinent
                   addAltAttraction={this.addAltAttraction}
                   setCountry={this.setCountry}
+
                   countries={this.state.countriesList}
                   setContinent={this.setContinent}
                   continent={this.state.continent}

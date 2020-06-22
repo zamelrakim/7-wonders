@@ -18,6 +18,7 @@ function Continent(props) {
     mountFunction()
   }, [continent, setContinent])
 
+
   useEffect(() => {
     const setCountry = () => {
       if (props.countries) {
@@ -40,15 +41,6 @@ function Continent(props) {
     }
   }, [selectedCountry])
 
-  /* 
-  V2
-  useEffect(() => {
-    if (selectedCountry) {
-      const apiCall = async () => {
-        const data = await axios.get(`https://www.triposo.com/api/20200405/poi.json?account=VY4307NY&token=xmav4vo2mfqoxdgvc3esq0b05f1t8bh8&tag_labels=topattractions&location_id=${selectedCountry}`)
-
-        setAttractions(data.data.results)
-
         // Gather Coordinates
         const coordinatesArray = []
         data.data.results.forEach(attraction => {
@@ -70,6 +62,7 @@ function Continent(props) {
     }
   }, [selectedCountry]) 
   */
+
 
   return (
     <div id='continent'>
