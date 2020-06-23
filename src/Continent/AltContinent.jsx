@@ -38,15 +38,15 @@ function AltContinent(props) {
     const apiCall = async () => {
       let attrArr = []
 
-      const placeData = await axios.get(`http://api.opentripmap.com/0.1/en/places/geoname?apikey=5ae2e3f221c38a28845f05b6d33300f92b2c077c071e3afe6abc18ba&name=${selectedCountry}`)
+      const placeData = await axios.get(`https://api.opentripmap.com/0.1/en/places/geoname?apikey=5ae2e3f221c38a28845f05b6d33300f92b2c077c071e3afe6abc18ba&name=${selectedCountry}`)
 
       if (placeData.data.status === "OK") {
         const { lat, lon } = placeData.data
-        const radiusData = await axios.get(`http://api.opentripmap.com/0.1/en/places/radius?apikey=5ae2e3f221c38a28845f05b6d33300f92b2c077c071e3afe6abc18ba&radius=1000&limit=3&offset=0&lon=${lon}&lat=${lat}&rate=2&format=json`)
+        const radiusData = await axios.get(`https://api.opentripmap.com/0.1/en/places/radius?apikey=5ae2e3f221c38a28845f05b6d33300f92b2c077c071e3afe6abc18ba&radius=1000&limit=3&offset=0&lon=${lon}&lat=${lat}&rate=2&format=json`)
         
         if (radiusData.data) {
             const xidFunc = async (place) => {
-            const xidData = await axios.get(`http://api.opentripmap.com/0.1/en/places/xid/${place.xid}?apikey=5ae2e3f221c38a28845f05b6d33300f92b2c077c071e3afe6abc18ba`)
+            const xidData = await axios.get(`https://api.opentripmap.com/0.1/en/places/xid/${place.xid}?apikey=5ae2e3f221c38a28845f05b6d33300f92b2c077c071e3afe6abc18ba`)
             return xidData.data
           }
 
